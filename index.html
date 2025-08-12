@@ -21,6 +21,7 @@
         border-collapse: collapse;
         width: 100%;
         text-align: center;
+        table-layout: fixed;
       }
       .header {
         display: flex;
@@ -40,7 +41,7 @@
       td {
         border-bottom: 1px solid #aaa;
         padding: 6px 8px;
-        width: 8vw;
+        max-width: 8vw;
         text-align: center;
       }
       .char-name {
@@ -56,7 +57,9 @@
       }
       .char-img img {
         height: 100%;
+        max-width: 8vw;
         border-radius: 4px;
+        object-fit: cover;
       }
       thead th {
         position: sticky;
@@ -190,7 +193,6 @@
                       || (parseFloat(char.info['レア'])<6 && t===4 && (parseFloat(char.info['Tier4']) === tier))"
                       class="tier-fill"
                       :class="'tier' + t + '-fill'"
-                      title="'Tier' + t"
                     ></div>
                   </template>
                 </div>
