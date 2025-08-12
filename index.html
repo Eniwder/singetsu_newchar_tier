@@ -154,7 +154,7 @@
             <span style="font-size: 14px">4凸</span>
           </span>
         </div>
-        <span>※★5キャラは5凸前提</span>
+        <span>※★5未満のキャラは5凸前提</span>
       </div>
       <table>
         <thead>
@@ -186,7 +186,8 @@
                 <div class="tier-cell">
                   <template v-for="t in totu">
                     <div
-                      v-if="char.info['Tier' + t] !== '' && char.info['Tier' + t] == tier"
+                      v-if="(parseFloat(char.info['レア'])===6 && (char.info['Tier' + t] !== '' && parseFloat(char.info['Tier' + t]) === tier))
+                      || (parseFloat(char.info['レア'])<6 && t===4 && (parseFloat(char.info['Tier4']) === tier))"
                       class="tier-fill"
                       :class="'tier' + t + '-fill'"
                       title="'Tier' + t"
