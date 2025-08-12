@@ -22,6 +22,14 @@
         width: 100%;
         text-align: center;
       }
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 8px;
+      }
+      .header,
+      h2,
       th,
       td.ver,
       footer {
@@ -113,14 +121,7 @@
   <body>
     <div id="app">
       <h2>キャラ実装計画一覧</h2>
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          gap: 24px;
-          margin-bottom: 8px;
-        "
-      >
+      <div class="header">
         <label style="display: flex; align-items: center; gap: 6px">
           <input
             type="checkbox"
